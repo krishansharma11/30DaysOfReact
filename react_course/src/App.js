@@ -1,35 +1,18 @@
-import './App.css';
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-class App extends React.Component {
+const App = () => {
+  const [count, setCount] = useState(0);
 
-  constructor(props) {
-    super()
-    this.state = { count: 0 }
-  }
+  const handleClick = () => {
+    setCount(count + 1);
+  };
 
-  Welcome = (props) => {
-    return <h1>State and Props in {props.msg}</h1>
-  }
-
-  UpdateCount = () => {
-    this.setState((prevState) => ({
-      count: prevState.count + 1,
-    }));
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <this.Welcome msg="Class Component" />
-        <p>Count: {this.state.count}</p>
-        <button onClick={this.UpdateCount}>Increment</button>
-
-      </div>
-    );
-  }
-}
-
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={handleClick}>Increment</button>
+    </div>
+  );
+};
 
 export default App;
-
