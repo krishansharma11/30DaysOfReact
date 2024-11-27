@@ -13,6 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <h1>Event Handler in Class Component</h1>
         <p>Count: {this.state.count}</p>
         <button onClick={this.handleClick}>Increment</button>
       </div>
