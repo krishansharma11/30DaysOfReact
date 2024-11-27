@@ -1,26 +1,28 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 
 function App() {
 
+  const [count, setCount] = useState(0);
   function Welcome(props) {
-    return <h1>Hello, {props.msg}!</h1>;
+    return <h1>State In, {props.msg}!</h1>;
   }
 
+  function UpdateCount(props) {
+    return setCount(props.data + 1)
+
+  }
 
   return (
     <div className="App">
       <Welcome msg="Function Component" />
-      <WelcomeClass msg="Class component" />
+      <p>Count: {count}</p>
+      <button onClick={() => UpdateCount({ data: count })}>Increment</button>
+
     </div>
   );
 }
 
-class WelcomeClass extends React.Component {
-  render() {
-    return <h1>Hello, {this.props.msg}!</h1>;
-  }
-}
 
 export default App;
 
