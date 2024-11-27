@@ -1,15 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  function Welcome(props) {
+    return <h1>Hello, {props.msg}!</h1>;
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
+      <Welcome msg="Function Component" />
     </div>
   );
 }
