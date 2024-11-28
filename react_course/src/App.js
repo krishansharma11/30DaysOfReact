@@ -1,26 +1,16 @@
 import './App.css';
+import UserInfo from "./UserInfo";
 import React from 'react';
 
 function App() {
-
-  function Welcome(props) {
-    return <h1>Hello, {props.msg}!</h1>;
-  }
-
-
   return (
     <div className="App">
-      <Welcome msg="Function Component" />
-      <WelcomeClass msg="Class component" />
+      <h1>User Information</h1>
+      {/* Passing props to the UserInfo component */}
+      <UserInfo name="Alice" age={25} />
+      <UserInfo name="Bob" age={30} />
     </div>
   );
 }
 
-class WelcomeClass extends React.Component {
-  render() {
-    return <h1>Hello, {this.props.msg}!</h1>;
-  }
-}
-
 export default App;
-
