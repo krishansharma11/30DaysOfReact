@@ -1,16 +1,22 @@
 import './App.css';
-import UserInfo from "./UserInfo";
 import React from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <h1>User Information</h1>
-      {/* Passing props to the UserInfo component */}
-      <UserInfo name="Alice" age={25} />
-      <UserInfo name="Bob" age={30} />
+  const isLoggedIn = true;
+  const isTernoryOp = true;
+
+  let content;
+  if (isLoggedIn) {
+    content = <h1>Welcome Back!</h1>;
+  } else {
+    content = <h1>Please Log In</h1>;
+  }
+
+  return <div>{content}
+    <div>
+      {isTernoryOp ? <h1>Ternory Operator!</h1> : <h1>Not a ternory operator</h1>}
     </div>
-  );
+  </div>;
 }
 
 export default App;
